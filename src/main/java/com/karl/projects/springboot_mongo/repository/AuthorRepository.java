@@ -12,4 +12,6 @@ public interface AuthorRepository extends MongoRepository<Author, String>{
 	public Optional<Author> findByFirstName(String firstName);
 	@Query("{'id': ?0 }")
 	public Optional<Author> findByIdField(String id);
+	@Query(value = "{'id': ?0 }", delete = true)
+	public Optional<Author> deleteByIdField(String id);
 }

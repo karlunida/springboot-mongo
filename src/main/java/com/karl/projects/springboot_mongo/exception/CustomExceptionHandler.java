@@ -13,5 +13,11 @@ public class CustomExceptionHandler {
 	public String handleAuthorNotFoundException(AuthorNotFoundException ex) {
 		return ex.getMessage();
 	}
+	
+	@ExceptionHandler(AuthorAlreadyExists.class)
+	@ResponseStatus(code = HttpStatus.CONFLICT)
+	public String handleAuthorNotFoundException(AuthorAlreadyExists ex) {
+		return ex.getMessage();
+	}
 
 }
